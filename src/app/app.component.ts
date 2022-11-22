@@ -6,12 +6,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'Servicios', url: '/servicios', icon: 'mail' },
+    { title: 'Noticias', url: '/noticias', icon: 'paper-plane' },
+    { title: 'Videos', url: '/videos', icon: 'heart' },
+    { title: 'Albergues', url: '/albergues', icon: 'archive' },
+    { title: 'Medidas Preventivas', url: '/medidas-preventivas', icon: 'paper-plane' },
+    { title: 'Miembros', url: '/miembros', icon: 'paper-plane' },
+    { title: 'Inscripcion', url: '/inscripcion', icon: 'paper-plane' },
+    { title: 'Iniciar Sesion', url: '/iniciar-sesion', icon: 'paper-plane' },
+    { title: 'Mis Situaciones', url: '/situaciones', icon: 'paper-plane' },
+    { title: 'Reportes', url: '/reportes', icon: 'paper-plane' },
+    { title: 'Cambiar Clave', url: '/cambiar-clave', icon: 'warning' },
+    { title: 'Recuperar Contraseña', url: '/recuperar-password', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}
