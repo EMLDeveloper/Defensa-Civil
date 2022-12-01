@@ -58,7 +58,15 @@ const routes: Routes = [
   {
     path: 'cambiar-clave',
     loadChildren: () => import('./cambiar-clave/cambiar-clave.module').then( m => m.CambiarClavePageModule)
+  },  {
+    path: 'desarrolladores',
+    loadChildren: () => import('./desarrolladores/desarrolladores.module').then( m => m.DesarrolladoresPageModule)
+  },
+  {
+    path: 'historia',
+    loadChildren: () => import('./historia/historia.module').then( m => m.HistoriaPageModule)
   }
+
 ];
 
 @NgModule({
