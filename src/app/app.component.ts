@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
+    { title: 'Inicio', url: '/inicio', icon: 'document-text' },
+    { title: 'Historia', url: '/historia', icon: 'document-text' },
     { title: 'Servicios', url: '/servicios', icon: 'server' },
     { title: 'Noticias', url: '/noticias', icon: 'alert-circle' },
     { title: 'Videos', url: '/videos', icon: 'videocam' },
@@ -18,7 +20,6 @@ export class AppComponent {
     { title: 'Iniciar Sesion', url: '/iniciar-sesion', icon: 'log-in' },
     { title: 'Cambiar Clave', url: '/cambiar-clave', icon: 'none' },
     { title: 'Recuperar Contraseña', url: '/recuperar-password', icon: 'none' },
-    { title: 'Historia', url: '/historia', icon: 'document-text' },
     { title: 'Desarrolladores', url: '/desarrolladores', icon: 'code-working' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

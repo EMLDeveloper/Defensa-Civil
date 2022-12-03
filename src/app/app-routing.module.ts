@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/servicios',
+    redirectTo: '/inicio',
     pathMatch: 'full'
   },
   {
@@ -58,13 +58,18 @@ const routes: Routes = [
   {
     path: 'cambiar-clave',
     loadChildren: () => import('./cambiar-clave/cambiar-clave.module').then( m => m.CambiarClavePageModule)
-  },  {
+  },
+  {
     path: 'desarrolladores',
     loadChildren: () => import('./desarrolladores/desarrolladores.module').then( m => m.DesarrolladoresPageModule)
   },
   {
     path: 'historia',
     loadChildren: () => import('./historia/historia.module').then( m => m.HistoriaPageModule)
+  },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   }
 
 ];
