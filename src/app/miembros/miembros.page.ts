@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-miembros',
@@ -7,7 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MiembrosPage implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+    this.cargar();
+   }
+
+   public lista:any;
+
+   cargar(){
+    this.http
+    .get<any>(
+      'https://adamix.net/defensa_civil/def/miembros.php'
+    )
+    .subscribe((res)=>{
+      console.log(res);
+      this.lista = res.datos;
+    });
+  }
 
   ngOnInit() {
   }

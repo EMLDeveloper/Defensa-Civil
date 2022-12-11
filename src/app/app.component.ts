@@ -14,12 +14,12 @@ export class AppComponent {
     { title: 'Albergues', url: '/albergues', icon: 'home' },
     { title: 'Medidas Preventivas', url: '/medidas-preventivas', icon: 'warning' },
     { title: 'Miembros', url: '/miembros', icon: 'people-circle' },
-    { title: 'Inscripcion', url: '/inscripcion', icon: 'person-add' },
-    { title: 'Mis Situaciones', url: '/situaciones', icon: 'walk' },
-    { title: 'Reportes', url: '/reportes', icon: 'documents' },
+    { title: 'Mapa', url: '/mapa', icon: 'map' },
     { title: 'Iniciar Sesion', url: '/iniciar-sesion', icon: 'log-in' },
     { title: 'Cambiar Clave', url: '/cambiar-clave', icon: 'none' },
     { title: 'Recuperar Contraseña', url: '/recuperar-password', icon: 'none' },
+    { title: 'Mis Situaciones', url: '/situaciones', icon: 'walk' },
+    { title: 'Reportes', url: '/reportes', icon: 'documents' },
     { title: 'Desarrolladores', url: '/desarrolladores', icon: 'code-working' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
