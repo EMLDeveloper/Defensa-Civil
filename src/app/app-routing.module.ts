@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/inicio',
+    redirectTo: '/iniciar-sesion',
     pathMatch: 'full'
   },
   {
@@ -70,7 +70,9 @@ const routes: Routes = [
   {
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
-  }
+  },
+  
+
 
 ];
 
