@@ -1,15 +1,14 @@
-
 import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 import { Marker } from '../models/marker.model';
 
-const apikey = "cKHkgf1mXO5KtOM-QWN4rKENuUaMRPbaOv2_FwEjFC8";
+const apikey = 'cKHkgf1mXO5KtOM-QWN4rKENuUaMRPbaOv2_FwEjFC8';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MapcontrollerService {
+export class MapControllerService {
 
   private marker: Marker = null!;
 
@@ -27,5 +26,7 @@ export class MapcontrollerService {
     var link = `https://revgeocode.search.hereapi.com/v1/revgeocode?at=${marker.lat},${marker.lng}&lang=es-DO&apikey=${apikey}`;
     return this.http.get(link);
 
+    // const link: any = await this.http.get(`https://revgeocode.search.hereapi.com/v1/revgeocode?at=${marker.lat},${marker.lng}&lang=es-DO&apikey=${apikey}`);
+    // return this.http.get(link);
   }
 }

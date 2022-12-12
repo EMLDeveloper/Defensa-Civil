@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { CoordInfo } from '../models/coord-info.models';
 import { Marker } from '../models/marker.model';
-import { MapcontrollerService } from '../services/mapcontroller.service';
+import { MapControllerService } from '../services/mapcontroller.service';
 
 declare var google: any;
 
@@ -90,7 +90,7 @@ export class MapaPage implements OnInit {
   //#endregion
 
   constructor(
-    private mapaController: MapcontrollerService,
+    private mapaController: MapControllerService,
     private http: HttpClient
   ) {}
 
