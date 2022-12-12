@@ -16,14 +16,14 @@ export class VideosPage implements OnInit {
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
-    this.obtenerVideos();
+    this.api();
   }
 
   transform(url2: any) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(this.link2+url2);
   }
 
-  obtenerVideos(){
+  api(){
     this.http
     .get<any>(
       'https://adamix.net/defensa_civil/def/videos.php'

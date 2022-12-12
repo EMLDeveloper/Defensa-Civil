@@ -14,10 +14,10 @@ export class NoticiasPage implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.obtenerNoticias();
+    this.api();
   }
 
-  obtenerNoticias(){
+  api(){
     this.http
     .get<any>(
       'https://adamix.net/defensa_civil/def/noticias.php'

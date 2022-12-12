@@ -11,10 +11,10 @@ export class AlberguesPage implements OnInit {
   public lista:any;
 
   constructor(private http: HttpClient) {
-    this.cargar();
+    this.api();
    }
 
-   cargar(){
+   api(){
     this.http
     .get<any>(
       'https://adamix.net/defensa_civil/def/albergues.php'

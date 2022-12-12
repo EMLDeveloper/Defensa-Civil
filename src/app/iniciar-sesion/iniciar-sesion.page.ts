@@ -6,6 +6,10 @@ import {
   FormBuilder
 } from '@angular/forms';
 import { AlertController, NavController } from '@ionic/angular';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -14,9 +18,13 @@ import { AlertController, NavController } from '@ionic/angular';
 })
 export class IniciarSesionPage implements OnInit {
 
+  name:any;
+  password:any
+  
+
   formularioLogin: FormGroup;
 
-  constructor(public fb: FormBuilder, public alertController: AlertController,
+  constructor(private router:Router ,private auth:AngularFireAuth,public fb: FormBuilder, public alertController: AlertController,
     public navCtrl: NavController) { 
     this.formularioLogin = this.fb.group({
       'nombre': new FormControl("",Validators.required),
@@ -58,6 +66,28 @@ export class IniciarSesionPage implements OnInit {
   await alert.present();
   return;
     }
+
+
+    this.name = ((document.getElementById("name") as HTMLInputElement).value);
+  this.password = ((document.getElementById(("password")) as HTMLInputElement).value);
+
+
+  this.auth.
+  signInWithEmailAndPassword(this.name , this.password)
+  .then(userCredential => {
+    
+    if(userCredential.user){
+      window.alert("Registrado Exitosamente");
+        this.router.navigateByUrl('/inicio');
+    }
+
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    window.alert("Error al iniciar sesion estos datos no existen")
+    // ..
+  });
     
   }
 

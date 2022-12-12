@@ -14,11 +14,11 @@ export class ServiciosPage implements OnInit {
   constructor( private http: HttpClient) { }
 
   ngOnInit() {
-    this.obtenerServicios();
+    this.api();
   
   }
 
-  obtenerServicios(){
+  api(){
     this.http
     .get<any>(
       'https://adamix.net/defensa_civil/def/servicios.php'

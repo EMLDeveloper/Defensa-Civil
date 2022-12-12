@@ -9,12 +9,12 @@ import { HttpClient } from '@angular/common/http';
 export class MiembrosPage implements OnInit {
 
   constructor(private http: HttpClient) {
-    this.cargar();
+    this.api();
    }
 
    public lista:any;
 
-   cargar(){
+   api(){
     this.http
     .get<any>(
       'https://adamix.net/defensa_civil/def/miembros.php'

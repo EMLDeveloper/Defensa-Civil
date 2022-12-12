@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class MedidasPreventivasPage implements OnInit {
 
   constructor(private http: HttpClient) { 
-    this.cargar();
+    this.api();
   }
 
   ngOnInit() {
@@ -17,7 +17,7 @@ export class MedidasPreventivasPage implements OnInit {
 
   public lista:any;
 
-  cargar(){
+  api(){
     this.http
     .get<any>(
       'https://adamix.net/defensa_civil/def/medidas_preventivas.php'
