@@ -16,8 +16,6 @@ export class AppComponent {
     { title: 'Miembros', url: '/miembros', icon: 'people-circle' },
     { title: 'Mapa', url: '/mapa', icon: 'map' },
     { title: 'Iniciar Sesion', url: '/iniciar-sesion', icon: 'log-in' },
-    { title: 'Registrarse', url: '/registro', icon: 'none' },
-    { title: 'Recuperar Contraseña', url: '/recuperar-password', icon: 'none' },
     { title: 'Mis Situaciones', url: '/situaciones', icon: 'walk' },
     { title: 'Reportes', url: '/reportes', icon: 'documents' },
     { title: 'Desarrolladores', url: '/desarrolladores', icon: 'code-working' },

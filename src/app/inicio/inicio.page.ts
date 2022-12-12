@@ -32,5 +32,7 @@ export class InicioPage implements AfterContentChecked {
     this.touchAllowed = !this.touchAllowed;
     this.swiper.swiperRef.allowTouchMove= this.touchAllowed
   }
-
+  iniciar(){
+    
+  }
 }
