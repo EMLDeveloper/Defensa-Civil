@@ -9,7 +9,7 @@
 
 <ion-content>
 
-  <ion-card style="background-color: #90a4ae" >
+  <ion-card  >
     <ion-card-title class="ion-text-center">
       Defensa Civil : Videos
     </ion-card-title>
@@ -24,10 +24,8 @@
         <p><strong>Fecha:</strong> {{ videos['fecha'] }}</p>
         <p><strong>Descripcion:</strong> {{ videos['descripcion'] }}</p>
       </ion-card-content>
-      <br>
-      <br>
 
-      <iframe style="margin-left: 20%;" [src]='this.transform(videos.link)' width="450" height="350"></iframe>
+      <iframe width="100%" height="100%" [src]='this.transform(videos.link)'></iframe>
     </ion-card>
 
   </ion-card>
