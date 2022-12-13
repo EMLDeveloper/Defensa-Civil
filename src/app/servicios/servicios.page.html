@@ -22,9 +22,11 @@
           {{ serv['nombre'] }}
         </ion-item>
         <div class="ion-padding" slot="content">
+          <img style= "margin-left: 20%;" width="450" height="350" [src]="serv['foto']">
           <p><strong>Descripcion:</strong> {{ serv['descripcion'] }}</p>
-          <img [src]="serv['foto']">
         </div>
+
+
 
       </ion-accordion>
 
