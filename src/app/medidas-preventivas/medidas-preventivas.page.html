@@ -10,25 +10,25 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large"class="ion-text-center">Medidas Preventivas</ion-title>
+      <ion-title size="large" class="ion-text-center"
+        >Medidas Preventivas</ion-title
+      >
     </ion-toolbar>
   </ion-header>
 
   <ion-list>
-      <ion-item  *ngFor ="let data of lista" >
-        <ion-card style="background-color: #01070a">
-        <ion-card-content >
-          <div>
-                <ion-item slot="header" color="light">
-                  <ion-label>Medida: {{data.id}}</ion-label>
-                </ion-item>
-                <div class="ion-padding" slot="content">
-                  <img src="{{data.foto}}"><br><br>
-                  <b>Titulo:</b><br>
-                  {{data.titulo}}<br><br>
-                  <b>Descripcion:</b><br>
-                  {{data.descripcion}}<br>
-                </div>
+    <ion-item *ngFor="let data of lista">
+      <ion-card style="background-color: #ff6600">
+        <ion-card-content style="background-color: #2e1d02">
+          <ion-card-title><ion-label class="ion-text-center" 
+            >Medida-{{data.id}}</ion-label
+          ></ion-card-title>
+          <div class="ion-padding" slot="content">
+            <img src="{{data.foto}}" /><br /><br />
+            <b>Titulo:</b><br />
+            {{data.titulo}}<br /><br />
+            <b>Descripcion:</b><br />
+            {{data.descripcion}}<br />
           </div>
         </ion-card-content>
       </ion-card>

@@ -24,71 +24,24 @@ export class MapaPage implements OnInit {
     {
       ciudad: '',
       codigo: '',
-      edificio: 'Polideportivo San Carlos',
-      coodinador: 'Luis Peña',
-      telefono: '(809) 308-3411',
-      capacidad: '274 personas',
-      lat: 18.489065101736063,
-      lng: -69.92187218117361,
+      edificio: 'Defensa Civil (San Cristobal)',
+      coodinador: 'Coronel Eduardo',
+      telefono: '849-456-4432',
+      capacidad: '100 personas',
+      lat: 18.4090713205532,
+      lng: -70.10622631521755,
     },
     {
       ciudad: '',
       codigo: '',
-      edificio: 'Iglesia Abventista Del 7Mo Dia Franco Creor',
-      coodinador: 'Pastor Reini',
-      telefono: '(809) 904-7084',
-      capacidad: '13,392 personas',
-      lat: 18.48249403469476,
-      lng: -69.91188325295565,
+      edificio: 'Defensa Civil (Santo Domingo)',
+      coodinador: 'Juan Pablo Molina',
+      telefono: '829-334-3421',
+      capacidad: '200 personas',
+      lat: 18.488815212495442,
+      lng: -69.92202051702928,
     },
   ];
-  //#endregion
-
-  //#region Array of markers 'EJEMPLO'
-  markers: Marker[] = [
-    {
-      ciudad: '',
-      codigo: '',
-      edificio: 'Polideportivo San Carlos',
-      coodinador: 'Luis Peña',
-      telefono: '(809) 308-3411',
-      capacidad: '274 personas',
-      lat: 4.658383846282959,
-      lng: -74.09394073486328,
-    },
-    {
-      ciudad: '',
-      codigo: '',
-      edificio: 'Polideportivo San Carlos',
-      coodinador: 'Luis Peña',
-      telefono: '(809) 308-3411',
-      capacidad: '274 personas',
-      lat: 4.667945861816406,
-      lng: -74.09964752197266,
-    },
-    {
-      ciudad: '',
-      codigo: '',
-      edificio: 'Polideportivo San Carlos',
-      coodinador: 'Luis Peña',
-      telefono: '(809) 308-3411',
-      capacidad: '274 personas',
-      lat: 4.676802158355713,
-      lng: -74.04825592041016,
-    },
-    {
-      ciudad: '',
-      codigo: '',
-      edificio: 'Polideportivo San Carlos',
-      coodinador: 'Luis Peña',
-      telefono: '(809) 308-3411',
-      capacidad: '274 personas',
-      lat: 4.6554284,
-      lng: -74.1094989,
-    },
-  ];
-  //#endregion
-
   constructor(
     private mapaController: MapControllerService,
     private http: HttpClient

@@ -1,40 +1,44 @@
 import { Component, OnInit } from '@angular/core';
-
-import { AlertController, NavController } from '@ionic/angular';
-
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { AlertController } from '@ionic/angular';
 import { MapControllerService } from '../services/mapcontroller.service';
 import { registro } from '../models/registro';
 
-
 @Component({
-  selector: 'app-recuperar-password',
-  templateUrl: './recuperar-password.page.html',
-  styleUrls: ['./recuperar-password.page.scss'],
+  selector: 'app-quiero-ser',
+  templateUrl: './quiero-ser.page.html',
+  styleUrls: ['./quiero-ser.page.scss'],
 })
-export class RecuperarPasswordPage implements OnInit {
+export class QuieroSerPage implements OnInit {
+
+  public cedula!: string;
+  public nombre!: string;
+  public apellido!: string;
+  public clave!: string;
+  public correo!: string;
+  public telefono!: string;
 
   public mensaje!: string;
   public exito!: boolean;
 
-  public clave_anterior!: string;
-  public clave_nueva!: string;
-  public token!: string;
+  
 
-  constructor(private router: Router,
+  constructor(
+    private router: Router,
     private http: HttpClient,
     private toke: MapControllerService,
-    private alertController: AlertController) { 
-  }
+    private alertController: AlertController
+  ) { }
 
   ngOnInit() {
   }
 
-  cambiarPass(credenciales: registro) {
+  Registrar(credenciales: registro) {
 
-    //url de la API
-    const url = 'https://adamix.net/defensa_civil/def/cambiar_clave.php';
+    //API
+    const url = 'https://adamix.net/defensa_civil/def/registro.php';
+
     
     let data = new FormData();
     let resultado = {};
@@ -44,8 +48,8 @@ export class RecuperarPasswordPage implements OnInit {
 
     this.http.post<any>(url, data).subscribe((res) => {
 
-      this.token = this.toke.token;
-      console.log(this.token + " " + "TOKEN");
+     
+      this.toke.token = res.datos.token;
       this.mensaje = res.mensaje;
       this.exito = res.exito;
 
@@ -70,15 +74,22 @@ export class RecuperarPasswordPage implements OnInit {
     await alert.present();
   }
 
-  guardar() {
+  iniciar() {
    
     const credenciales: registro = {
-      clave_anterior: this.clave_anterior,
-      clave_nueva: this.clave_nueva,
-      token:this.toke.token
+      cedula: this.cedula,
+      nombre: this.nombre,
+      apellido: this.apellido,
+      clave: this.clave,
+      correo: this.correo,
+      telefono: this.telefono
     };
     console.log(credenciales);
-    this.cambiarPass(credenciales);
+    this.Registrar(credenciales);
+  }
+
+  iniciarSesion() {
+    this.router.navigate(['/iniciar-sesion']);
   }
 
 }

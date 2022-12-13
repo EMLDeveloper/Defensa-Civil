@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormControl,
-  Validators,
-  FormBuilder
-} from '@angular/forms';
 import { AlertController, NavController } from '@ionic/angular';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Router } from '@angular/router';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { HttpClient } from '@angular/common/http';
+import { MapControllerService } from '../services/mapcontroller.service';
+import { iniciar } from '../models/iniciar';
+
 
 
 @Component({
@@ -18,77 +14,68 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class IniciarSesionPage implements OnInit {
 
-  name:any;
-  password:any
-  
+  public cedula!: string;
+  public clave!: string;
+  public mensaje!: string;
+  public exito!: boolean;
 
-  formularioLogin: FormGroup;
+  constructor(private router: Router, 
+    private http: HttpClient, 
+    private toke: MapControllerService,
+    private alertController: AlertController) { 
 
-  constructor(private router:Router ,private auth:AngularFireAuth,public fb: FormBuilder, public alertController: AlertController,
-    public navCtrl: NavController) { 
-    this.formularioLogin = this.fb.group({
-      'nombre': new FormControl("",Validators.required),
-      'password': new FormControl("",Validators.required)
-    })
   }
 
   ngOnInit() {
   }
 
-  async ingresar(){
+  iniciar(credenciales: iniciar) {
 
-    var f = this.formularioLogin.value;
+    //API
+    const url = 'https://adamix.net/defensa_civil/def/iniciar_sesion.php';
 
-    var usuario = JSON.parse(localStorage.getItem("usuario") || '{}');
-
-    if(usuario.nombre == f.nombre && usuario.password == f.password){
-      console.log('Ingresado');
-      localStorage.setItem('ingresado','true');
-      this.navCtrl.navigateRoot('inicio');
-      const alert = await this.alertController.create({
-        header: 'completado',
-        message: 'Estas dentro del Sistema',
-        buttons: ['Aceptar']
-      });
-
-      await alert.present();
-      return;
-      
-    }
-    
-    if(this.formularioLogin.invalid){
-      const alert = await this.alertController.create({
-        header: 'Datos incompletos',
-        message: 'Tienes que llenar todos los datos',
-        buttons: ['Aceptar']
-      });
-
-  await alert.present();
-  return;
+  
+    let data = new FormData();
+    for (let k in credenciales) {
+      data.append(k, credenciales[k]);
     }
 
+    this.http.post<any>(url, data).subscribe((res) => {
 
-    this.name = ((document.getElementById("name") as HTMLInputElement).value);
-  this.password = ((document.getElementById(("password")) as HTMLInputElement).value);
+      this.toke.token = res.datos.token;
 
+      this.mensaje = res.mensaje;
+  
+      this.exito = res.exito;
 
-  this.auth.
-  signInWithEmailAndPassword(this.name , this.password)
-  .then(userCredential => {
-    
-    if(userCredential.user){
-      window.alert("Registrado Exitosamente");
-        this.router.navigateByUrl('/inicio');
-    }
+      if (this.exito == true) {
+        this.router.navigate(['/inicio']);
+        console.log(this.mensaje + ' su token es: ' + this.toke.token + ', Exito = ' + this.exito);
+      } else {
+        this.alerta();
+        console.log('Ha ocurrido un error: ' + this.mensaje + ', Exito = ' +  this.exito);
+      }
 
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    window.alert("Error al iniciar sesion estos datos no existen")
-    // ..
-  });
-    
+    });
+  }
+
+  async alerta() {
+    const alert = await this.alertController.create({
+      header: 'Ha ocurrido un error',
+      message: this.mensaje,
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
+
+  iniciarS() {
+ 
+    const credenciales: iniciar = {
+      cedula: this.cedula,
+      clave: this.clave
+    };
+    this.iniciar(credenciales);
   }
 
 }

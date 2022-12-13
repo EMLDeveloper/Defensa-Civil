@@ -16,6 +16,7 @@ export class AppComponent {
     { title: 'Medidas Preventivas', url: '/medidas-preventivas', icon: 'warning' },
     { title: 'Miembros', url: '/miembros', icon: 'people-circle' },
     { title: 'Mapa', url: '/mapa', icon: 'map' },
+    { title: 'Unete al Equipo', url: '/quiero-ser', icon: 'code-working' },
     { title: 'Mis Situaciones', url: '/situaciones', icon: 'sad' },
     { title: 'Reportes', url: '/reportes', icon: 'documents' },
     { title: 'Desarrolladores', url: '/desarrolladores', icon: 'code-working' },
