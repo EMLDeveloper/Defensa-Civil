@@ -17,15 +17,16 @@
     <ion-card  *ngFor="let videos of listaVideos">
     
       <ion-card-header>
+        <iframe width="100%" height="100%" [src]='this.transform(videos.link)'></iframe>
         <ion-card-title>{{ videos['titulo'] }}</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
-        <p><strong>Fecha:</strong> {{ videos['fecha'] }}</p>
         <p><strong>Descripcion:</strong> {{ videos['descripcion'] }}</p>
+        <p><strong>Fecha:</strong> {{ videos['fecha'] }}</p>
+        
       </ion-card-content>
 
-      <iframe width="100%" height="100%" [src]='this.transform(videos.link)'></iframe>
     </ion-card>
 
   </ion-card>
