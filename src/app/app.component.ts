@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public appPages = [
     { title: 'Inicio', url: '/inicio', icon: 'medkit' },
+    { title: 'Iniciar Sesion', url: '/iniciar-sesion', icon: 'log-in' },
     { title: 'Historia', url: '/historia', icon: 'document-text' },
     { title: 'Servicios', url: '/servicios', icon: 'server' },
     { title: 'Noticias', url: '/noticias', icon: 'alert-circle' },
@@ -15,7 +16,6 @@ export class AppComponent {
     { title: 'Medidas Preventivas', url: '/medidas-preventivas', icon: 'warning' },
     { title: 'Miembros', url: '/miembros', icon: 'people-circle' },
     { title: 'Mapa', url: '/mapa', icon: 'map' },
-    { title: 'Iniciar Sesion', url: '/iniciar-sesion', icon: 'log-in' },
     { title: 'Mis Situaciones', url: '/situaciones', icon: 'sad' },
     { title: 'Reportes', url: '/reportes', icon: 'documents' },
     { title: 'Desarrolladores', url: '/desarrolladores', icon: 'code-working' },
