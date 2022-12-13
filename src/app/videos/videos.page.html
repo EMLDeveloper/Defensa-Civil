@@ -9,9 +9,9 @@
 
 <ion-content>
 
-  <ion-card >
+  <ion-card style="background-color: #90a4ae" >
     <ion-card-title class="ion-text-center">
-      Videos Informativos
+      Defensa Civil : Videos
     </ion-card-title>
 
     <ion-card  *ngFor="let videos of listaVideos">
@@ -24,8 +24,10 @@
         <p><strong>Fecha:</strong> {{ videos['fecha'] }}</p>
         <p><strong>Descripcion:</strong> {{ videos['descripcion'] }}</p>
       </ion-card-content>
+      <br>
+      <br>
 
-      <iframe width="100%" height="100%" [src]='this.transform(videos.link)'></iframe>
+      <iframe style="margin-left: 20%;" [src]='this.transform(videos.link)' width="450" height="350"></iframe>
     </ion-card>
 
   </ion-card>
