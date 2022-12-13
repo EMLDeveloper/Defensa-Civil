@@ -10,6 +10,8 @@ const apikey = 'cKHkgf1mXO5KtOM-QWN4rKENuUaMRPbaOv2_FwEjFC8';
 })
 export class MapControllerService {
 
+  public token!: string;
+
   private marker: Marker = null!;
 
   constructor(private http: HttpClient) { }
@@ -25,8 +27,5 @@ export class MapControllerService {
   getHttpData(marker: Marker) {
     var link = `https://revgeocode.search.hereapi.com/v1/revgeocode?at=${marker.lat},${marker.lng}&lang=es-DO&apikey=${apikey}`;
     return this.http.get(link);
-
-    // const link: any = await this.http.get(`https://revgeocode.search.hereapi.com/v1/revgeocode?at=${marker.lat},${marker.lng}&lang=es-DO&apikey=${apikey}`);
-    // return this.http.get(link);
   }
 }
