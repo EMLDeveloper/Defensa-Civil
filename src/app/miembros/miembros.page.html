@@ -16,20 +16,16 @@
 
   <ion-list>
       <ion-item  *ngFor ="let data of lista" >
-        <ion-card>
+        <ion-card style="background-color: #90a4ae">
         <ion-card-content>
           <div>
-            <ion-accordion-group>
-              <ion-accordion value="first">
-                <ion-item slot="header" color="light">
+                <ion-item slot="header" style="color: white">
                   <ion-label>{{data.cargo}}</ion-label>
                 </ion-item>
                 <div class="ion-padding" slot="content">
-                  <img src="{{data.foto}}" width="250" height="150"><br><br>
-                  <b>{{data.nombre}}</b><br><br>
+                  <img src="{{data.foto}}"><br><br>
+                  <b style="color: rgb(0, 0, 0)">{{data.nombre}}</b><br><br>
                 </div>
-              </ion-accordion>
-            </ion-accordion-group>
           </div>
         </ion-card-content>
       </ion-card>

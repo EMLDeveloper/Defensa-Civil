@@ -11,7 +11,6 @@
   <ion-card >
     <ion-card-title class="ion-text-center">Noticias mas recientes</ion-card-title>
     <ion-card  color = "medium" *ngFor="let noticias of listaNoticias">
-      <img [src]="noticias['foto']">
       <ion-card-header>
         <ion-card-title>{{ noticias['titulo'] }}.</ion-card-title>
       </ion-card-header>
@@ -20,6 +19,7 @@
         <p><strong>Dia de la tragedia de el {{ noticias['fecha'] }}.</strong> </p><hr>
         <p>{{ noticias['contenido'] }}</p>
       </ion-card-content>
+      <img style= "margin-left: 30%;" width="450" height="350" [src]="noticias['foto']">
     </ion-card>
 
   </ion-card>
