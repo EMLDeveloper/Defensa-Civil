@@ -9,4 +9,34 @@
 
 <ion-content>
 
+
+  <div class="center" style="margin-top:50px">
+     <div linespace></div>
+     <ion-button (click)="situacion()" color="primary" >Ver Reportes</ion-button>
+  </div>
+
+  <ion-list>
+    <ion-item  *ngFor ="let data of lista" >
+        <div>
+              <ion-item slot="header" color="light" style="width: 300px;">
+                <ion-label>{{data.titulo}}</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                <img src="{{data.foto}}" width="250" height="150"><br><br>
+                <b>Voluntario:</b><br>
+                {{data.voluntario}}<br><br>
+                <b>Descripcion:</b><br>
+                {{data.descripcion}}<br>
+                <b>Latitud:</b><br>
+                {{data.latitud}}<br>
+                <b>Longitud:</b><br>
+                {{data.longitud}}<br>
+                <b>Estado:</b><br>
+                {{data.estado}}<br>
+                <b>Fecha:</b><br>
+                {{data.fecha}}<br>
+              </div>
+        </div>
+  </ion-item>
+</ion-list>
 </ion-content>

@@ -17,8 +17,8 @@ export class AppComponent {
     { title: 'Miembros', url: '/miembros', icon: 'people-circle' },
     { title: 'Mapa', url: '/mapa', icon: 'map' },
     { title: 'Unete al Equipo', url: '/quiero-ser', icon: 'code-working' },
-    { title: 'Mis Situaciones', url: '/situaciones', icon: 'sad' },
     { title: 'Reportes', url: '/reportes', icon: 'documents' },
+    { title: 'Mis Situaciones', url: '/situaciones', icon: 'sad' },
     { title: 'Desarrolladores', url: '/desarrolladores', icon: 'code-working' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
