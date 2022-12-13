@@ -12,12 +12,16 @@
 
   <div class="center" style="margin-top:50px">
      <div linespace></div>
-     <ion-button (click)="situacion()" color="primary" >Ver Reportes</ion-button>
+     <h1>Situaciones Realizadas</h1>
   </div>
 
   <ion-list>
     <ion-item  *ngFor ="let data of lista" >
+      <ion-card>
+      <ion-card-content>
         <div>
+          <ion-accordion-group>
+            <ion-accordion value="first">
               <ion-item slot="header" color="light" style="width: 300px;">
                 <ion-label>{{data.titulo}}</ion-label>
               </ion-item>
@@ -36,7 +40,11 @@
                 <b>Fecha:</b><br>
                 {{data.fecha}}<br>
               </div>
+            </ion-accordion>
+          </ion-accordion-group>
         </div>
+      </ion-card-content>
+    </ion-card>
   </ion-item>
 </ion-list>
 </ion-content>
