@@ -3,45 +3,45 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Reportes de Situaciones</ion-title>
+    <ion-title class="ion-text-center">Reportes de Situaciones</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card style="background-color: gray;">
+    <ion-card-title class="ion-text-center">Reportar situacion</ion-card-title>
 
-  <h1 style="margin-left: 30%;">Reportes</h1>
+    <ion-item>
+      <ion-label position="floating">Titulo:</ion-label>
+      <ion-input [(ngModel)]="titulo"></ion-input>
+    </ion-item>
 
+    <ion-item>
+      <ion-label position="floating">Descripción:</ion-label>
+      <ion-textarea [(ngModel)]="descripcion"></ion-textarea>
+    </ion-item>
 
-        <ion-item>
-          <ion-label position="floating">Titulo</ion-label>
-          <ion-input [(ngModel)]="titulo"></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label position="floating">Link de la Foto:</ion-label>
+      <ion-input [(ngModel)]="foto"></ion-input>
+    </ion-item>
 
-        <ion-item>
-          <ion-label position="floating">Descripción</ion-label>
-          <ion-textarea [(ngModel)]="descripcion" ></ion-textarea>
-        </ion-item>
+    <ion-item>
+      <ion-label position="floating">Latitud:</ion-label>
+      <ion-input [(ngModel)]="latitud"></ion-input>
+    </ion-item>
 
-        <ion-item>
-          <ion-label position="floating">Link de la Foto</ion-label>
-          <ion-input [(ngModel)]="foto" ></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label position="floating">Longitud:</ion-label>
+      <ion-input [(ngModel)]="longitud"></ion-input>
+    </ion-item>
 
-        <ion-item>
-          <ion-label position="floating">Latitud</ion-label>
-          <ion-input [(ngModel)]="latitud" ></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label position="floating">Longitud</ion-label>
-          <ion-input [(ngModel)]="longitud" ></ion-input>
-        </ion-item>
-
-        <div class="container">
-          <div class="center">
-            <ion-button (click)="reportes()" expand="full">
-              Realizar Reporte
-            </ion-button>
-          </div>
-        </div>
+    <div class="container">
+      <div class="center">
+        <ion-button (click)="reportes()" expand="full">
+          Realizar reporte
+        </ion-button>
+      </div>
+    </div>
+  </ion-card>
 </ion-content>

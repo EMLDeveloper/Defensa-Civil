@@ -21,9 +21,9 @@ export class SituacionesPage implements OnInit {
   constructor(private router: Router,
     private http: HttpClient,
     private toke: MapControllerService,
-    private alertController: AlertController) { 
-      this.situacion();
-    }
+    private alertController: AlertController) {
+    this.situacion();
+  }
 
   ngOnInit() {
     this.situacion();
@@ -45,9 +45,9 @@ export class SituacionesPage implements OnInit {
 
       this.token = this.toke.token;
       console.log(this.token + " " + "TOKEN");
-    
+
       this.mensaje = res.mensaje;
-     
+
       this.exito = res.exito;
 
       this.lista = res.datos;
@@ -58,7 +58,7 @@ export class SituacionesPage implements OnInit {
         console.log(this.mensaje + ' consultado exitosamente! ' + ', Exito = ' + this.exito);
       } else {
         this.alerta();
-        console.log('Ha ocurrido un error: ' + this.mensaje + ', Exito = ' +  this.exito);
+        console.log('Ocurrio un error: ' + this.mensaje + ', Exito = ' + this.exito);
       }
 
     });
@@ -66,7 +66,7 @@ export class SituacionesPage implements OnInit {
 
   async alerta() {
     const alert = await this.alertController.create({
-      header: 'Ha ocurrido un error',
+      header: 'Ocurrio un error',
       message: this.mensaje,
       buttons: ['OK'],
     });
@@ -81,7 +81,7 @@ export class SituacionesPage implements OnInit {
   situacion() {
 
     const credenciales: registro = {
-      token:this.toke.token
+      token: this.toke.token
     };
     console.log(credenciales);
     this.misSituaciones(credenciales);

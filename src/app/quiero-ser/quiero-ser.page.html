@@ -1,55 +1,81 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-menu-button name="menu"></ion-menu-button>
-    </ion-buttons>
+    <ion-breadcrumb [routerLink]="['/iniciar-sesion']">
+      <ion-icon slot="start" name="walk"></ion-icon>
+      Login
+    </ion-breadcrumb>
     <ion-title class="ion-text-center">Registrarse</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-  <img style="width: 80%;"src="https://eldia.com.do/wp-content/uploads/2021/12/Defensa-Civil.png?mrf-size=m"/>
-
-  <div class="center" style="margin-top:50px">
-
+  
+  <ion-card style="background-color: #ff6600">
+    <img
+      style="width: 100%"
+      src="https://eldia.com.do/wp-content/uploads/2021/12/Defensa-Civil.png?mrf-size=m"
+    />
     <ion-item transparent>
-     
-     <ion-icon slot="start"></ion-icon>
-      <ion-input [(ngModel)]="cedula" placeholder="Cedula" type="text"></ion-input>
+    
+      <ion-input
+        position="floating"
+        [(ngModel)]="cedula"
+        placeholder="Cedula:"
+        type="text"
+      ></ion-input>
     </ion-item>
 
     <ion-item transparent>
-       
-        <ion-icon slot="start" ></ion-icon>
-         <ion-input [(ngModel)]="nombre" placeholder="Nombre" type="text"></ion-input>
-       </ion-item>
-
-           <ion-item transparent>
-        
-        <ion-icon slot="start" ></ion-icon>
-         <ion-input [(ngModel)]="apellido" placeholder="Apellido" type="text"></ion-input>
-       </ion-item>
+      <ion-input
+        position="floating"
+        [(ngModel)]="nombre"
+        placeholder="Nombre:"
+        type="text"
+      ></ion-input>
+    </ion-item>
 
     <ion-item transparent>
-      
-      <ion-icon slot="start" expand="block" ></ion-icon>
-       <ion-input [(ngModel)]="clave" placeholder="Contraseña" type="password"></ion-input>
-     </ion-item>
+      <ion-input
+        position="floating"
+        [(ngModel)]="apellido"
+        placeholder="Apellido:"
+        type="text"
+      ></ion-input>
+    </ion-item>
 
-     <ion-item transparent>
-       
-        <ion-icon slot="start" ></ion-icon>
-         <ion-input [(ngModel)]="correo" placeholder="Correo" type="text"></ion-input>
-       </ion-item>
+    <ion-item transparent>
+      <ion-input
+        position="floating"
+        [(ngModel)]="clave"
+        placeholder="Contraseña:"
+        type="password"
+      ></ion-input>
+    </ion-item>
 
-       <ion-item transparent>
-       
-        <ion-icon slot="start" ></ion-icon>
-         <ion-input [(ngModel)]="telefono" placeholder="Telefono" type="text"></ion-input>
-       </ion-item>
-<br><br>
-     <div linespace></div>
-     <ion-button style= "margin-left: 40%;"  (click)="iniciar()" color="success" [routerLink]="['/iniciar-sesion']">Registrar</ion-button>
-  </div>
+    <ion-item transparent>
+      <ion-input
+        position="floating"
+        [(ngModel)]="correo"
+        placeholder="Correo:"
+        type="text"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item transparent>
+      <ion-input
+        position="floating"
+        [(ngModel)]="telefono"
+        placeholder="Telefono:"
+        type="text"
+      ></ion-input>
+    </ion-item>
+
+    <ion-button
+      expand="block"
+      (click)="iniciar()"
+      color="primary"
+      [routerLink]="['/iniciar-sesion']"
+      >Registrar</ion-button
+    >
+  </ion-card>
 </ion-content>
